@@ -27,7 +27,7 @@ allow-direct-references = true
 packages = ["fichero_linux_printer"]
 
 [tool.hatch.build.targets.sdist]
-include = ["/fichero_linux_printer", "/resources", "/scripts", "/tests", "/README.md", "/LICENSE", "/uv.lock"]
+include = ["/fichero_linux_printer", "/resources", "/scripts", "/tests", "/README.md", "/LICENSE", "/uv.lock", "/packaging", "/RELEASE_NOTES.md"]
 
 [dependency-groups]
 test = ["pytest>=8", "pytest-asyncio>=0.23"]

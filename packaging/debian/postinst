@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+case "$1" in
+    configure)
+        if [ -S /run/udev/control ]; then
+            udevadm control --reload-rules
+            udevadm trigger --action=change --subsystem-match=usb --attr-match=idVendor=09c5 --attr-match=idProduct=0200
+            udevadm settle --timeout=10 || true
+        fi
+        fichero-printer-setup --auto
+        ;;
+esac
+exit 0

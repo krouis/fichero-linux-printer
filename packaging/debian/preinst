@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+case "$1" in
+    install|upgrade)
+        if [ -e /usr/lib/cups/backend/fichero ] &&
+           ! dpkg-query -S /usr/lib/cups/backend/fichero 2>/dev/null | grep -q '^fichero-linux-printer:'; then
+            echo 'A manually installed FICHERO backend exists. Remove the source installation first; see README migration instructions.' >&2
+            exit 1
+        fi
+        ;;
+esac
+exit 0

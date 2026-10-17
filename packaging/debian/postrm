@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+case "$1" in
+    remove|purge)
+        # Only discard interpreter caches, never administrator-created files.
+        if [ -d /usr/lib/fichero-linux-printer ]; then
+            find /usr/lib/fichero-linux-printer -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
+            find /usr/lib/fichero-linux-printer -depth -type d -empty -delete
+        fi
+        if [ -S /run/udev/control ]; then
+            udevadm control --reload-rules
+            udevadm trigger --action=change --subsystem-match=usb --attr-match=idVendor=09c5 --attr-match=idProduct=0200
+        fi
+        ;;
+esac
+if [ "$1" = purge ]; then
+    rm -f /var/lib/fichero-linux-printer/queue-uri
+    if [ -d /var/lib/fichero-linux-printer ]; then
+        rmdir --ignore-fail-on-non-empty /var/lib/fichero-linux-printer
+    fi
+fi
+exit 0
