@@ -1,0 +1,36 @@
+[project]
+name = "fichero-linux-printer"
+version = "0.1.0"
+description = "Ubuntu CUPS integration for AiYin D11s/FICHERO USB label printers"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+    "fichero-printer[usb] @ git+https://github.com/krouis/fichero-printer.git@7948e5867600c152034e03c99ced51ea8ef41de7",
+]
+
+[project.urls]
+Repository = "https://github.com/krouis/fichero-linux-printer"
+Issues = "https://github.com/krouis/fichero-linux-printer/issues"
+
+[project.scripts]
+fichero-cups-backend = "fichero_linux_printer.backend:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["fichero_linux_printer"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/fichero_linux_printer", "/resources", "/scripts", "/tests", "/README.md", "/LICENSE", "/uv.lock"]
+
+[dependency-groups]
+test = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"

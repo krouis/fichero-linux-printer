@@ -1,0 +1,57 @@
+*PPD-Adobe: "4.3"
+*FormatVersion: "4.3"
+*FileVersion: "0.1"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName: "D11S.PPD"
+*Manufacturer: "AiYin"
+*Product: "(D11s)"
+*ModelName: "FICHERO D11s USB"
+*ShortNickName: "FICHERO D11s USB"
+*NickName: "FICHERO D11s USB - 14 x 30 mm labels"
+*PSVersion: "(3010.000) 0"
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*FileSystem: False
+*Throughput: "1"
+*cupsVersion: 2.4
+*cupsManualCopies: True
+*cupsMaxCopies: 20
+*cupsFilter2: "application/vnd.cups-pdf application/vnd.fichero-pdf 0 -"
+*cupsSNMPSupplies: False
+*cupsIPPSupplies: False
+*1284DeviceID: "MFG:AiYin;MDL:D11s;CLS:PRINTER;"
+*OpenUI *PageSize/Label size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: 14x30mm
+*PageSize 14x30mm/14 x 30 mm: "<</PageSize[39.685039 85.039370]>>setpagedevice"
+*CloseUI: *PageSize
+*OpenUI *PageRegion/Label size: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: 14x30mm
+*PageRegion 14x30mm/14 x 30 mm: "<</PageSize[39.685039 85.039370]>>setpagedevice"
+*CloseUI: *PageRegion
+*DefaultImageableArea: 14x30mm
+*ImageableArea 14x30mm: "2.817889 0 36.867150 85.039370"
+*DefaultPaperDimension: 14x30mm
+*PaperDimension 14x30mm: "39.685039 85.039370"
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 20 AnySetup *Resolution
+*DefaultResolution: 203dpi
+*Resolution 203dpi/203 DPI: "<</HWResolution[203 203]>>setpagedevice"
+*CloseUI: *Resolution
+*OpenUI *ColorModel/Color mode: PickOne
+*OrderDependency: 20 AnySetup *ColorModel
+*DefaultColorModel: Gray
+*ColorModel Gray/Grayscale: "<</cupsColorSpace 0 /cupsBitsPerColor 8>>setpagedevice"
+*CloseUI: *ColorModel
+*OpenUI *FicheroDensity/Print density: PickOne
+*OrderDependency: 30 AnySetup *FicheroDensity
+*DefaultFicheroDensity: 2
+*FicheroDensity 0/Light: ""
+*FicheroDensity 1/Medium: ""
+*FicheroDensity 2/Dark: ""
+*CloseUI: *FicheroDensity
+*DefaultFont: Courier
+*Font Courier: Standard "(001.007)" Standard ROM

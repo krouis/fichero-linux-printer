@@ -1,0 +1,3 @@
+#!/bin/sh
+# CUPS runs this root-owned, world-executable backend as its unprivileged lp user.
+exec /opt/fichero-cups/app/bin/python -I -m fichero_linux_printer.backend "$@"
